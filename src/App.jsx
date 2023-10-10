@@ -15,11 +15,21 @@ const initialStateTodos = [
 
 const App = () => {
   const [todos, setTodos] = useState(initialStateTodos);
+
+  const createTodo = (title)=>{
+    const newTodo={
+      id: Date.now(),
+      title,
+      completed:false
+    }
+    setTodos([...todos, newTodo])
+  }
+
   return (
     <div className="bg-gray-200  min-h-screen bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
       <Header />
       <main className="container mt-8 mx-auto px-4">
-        <TodoCreate />
+        <TodoCreate createTodo={createTodo}/>
         <TodoList todos={todos}/>
         <TodoComputed />
         <TodoFilter />
