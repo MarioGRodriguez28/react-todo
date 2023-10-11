@@ -1,12 +1,24 @@
+import CheckIcon from "./icons/CheckICon";
 import CrossIcon from "./icons/CrossIcon";
 
-const TodoItem = ({todo}) => {
-    const {id, title,completed} = todo
+const TodoItem = ({ todo, updateTodo, deleteTodo }) => {
+  const { id, title, completed } = todo;
   return (
     <article className="flex gap-4  px-4 py-4 border-b-gray-400 border-b">
-      <button className="rounded-full  border-2 inline-block h-5 w-5 flex-none"></button>
-      <p className="text-gray-600 grow ">{title} </p>
-      <button className="flex-none">
+      <button
+        className={`h-5 w-5  rounded-full  border-2 flex-none ${
+          completed
+            ? " bg-gradient-to-r from-indigo-500 via-indigo-600 to-blue-800 flex justify-center items-center"
+            : "inline-block "
+        } `}
+        onClick={() => updateTodo(id)}
+      >
+        {completed && <CheckIcon />}
+      </button>
+      <p className={`text-gray-600 grow ${completed && "line-through"}`}>
+        {title}{" "}
+      </p>
+      <button onClick={() => deleteTodo(id)} className="flex-none">
         <CrossIcon />
       </button>
     </article>

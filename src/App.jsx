@@ -16,21 +16,37 @@ const initialStateTodos = [
 const App = () => {
   const [todos, setTodos] = useState(initialStateTodos);
 
-  const createTodo = (title)=>{
-    const newTodo={
+  const createTodo = (title) => {
+    const newTodo = {
       id: Date.now(),
       title,
-      completed:false
-    }
-    setTodos([...todos, newTodo])
-  }
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
+
+  const updateTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   return (
     <div className="bg-gray-200  min-h-screen bg-[url('./assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat">
       <Header />
       <main className="container mt-8 mx-auto px-4">
-        <TodoCreate createTodo={createTodo}/>
-        <TodoList todos={todos}/>
+        <TodoCreate createTodo={createTodo} />
+        <TodoList
+          todos={todos}
+          updateTodo={updateTodo}
+          deleteTodo={deleteTodo}
+        />
         <TodoComputed />
         <TodoFilter />
       </main>
