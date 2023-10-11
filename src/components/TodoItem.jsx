@@ -1,8 +1,9 @@
-import CheckIcon from "./icons/CheckICon";
+import CheckIcon from "./icons/CheckIcon";
 import CrossIcon from "./icons/CrossIcon";
 
 const TodoItem = ({ todo, updateTodo, deleteTodo }) => {
   const { id, title, completed } = todo;
+  
   return (
     <article className="flex gap-4  px-4 py-4 border-b-gray-400 border-b">
       <button
