@@ -60,7 +60,7 @@ const App = () => {
     };
 
     return (
-        <div className="bg-[url('./assets/images/bg-mobile-light.jpg')] bg-gray-200  dark:bg-gray-900 min-h-screen dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]  bg-contain bg-no-repeat">
+        <div className=" transition-all duration-1000 bg-[url('./assets/images/bg-mobile-light.jpg')] bg-gray-200  dark:bg-gray-900 min-h-screen dark:bg-[url('./assets/images/bg-mobile-dark.jpg')]  bg-contain bg-no-repeat">
             <Header />
             <main className="container mt-8 mx-auto px-4">
                 <TodoCreate createTodo={createTodo} />

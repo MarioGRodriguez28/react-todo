@@ -6,8 +6,8 @@ const TodoFilter = ({ changeFilter, filter }) => {
     ];
 
     return (
-        <section className="mt-8 container mx-auto ">
-            <div className="bg-white p-4 rounded-md flex justify-center gap-4  dark:bg-gray-800">
+        <section className="mt-8 container mx-auto  ">
+            <div className="bg-white p-4 rounded-md flex justify-center gap-4  dark:bg-gray-800 transition-all duration-1000">
                 {filterOptions.map((option) => (
                     <button
                         key={option.value}
