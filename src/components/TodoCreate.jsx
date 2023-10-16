@@ -20,7 +20,7 @@ const TodoCreate = ({ createTodo }) => {
       <span className="rounded-full  border-2 inline-block h-5 w-5"></span>
       <input
         type="text"
-        placeholder="Create a new TODO"
+        placeholder="Create a new To Do"
         className="  dark:bg-gray-800  w-full text-gray-400 outline-none transition-all duration-1000"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
