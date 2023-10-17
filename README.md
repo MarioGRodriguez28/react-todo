@@ -2,6 +2,10 @@
 
 This is a project called "react-todo" which demonstrates the usage of React and React libraries for building a todo application.
 
+
+![PREVIEW](https://todo-list-react-tailwind.netlify.app/)
+
+
 ## Dependencies
 
 - @hello-pangea/dnd: ^16.3.0
